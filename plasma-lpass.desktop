@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=LastPass
+Comment=Integrates KRunner with LastPass CLI.
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+Icon=lock
+X-KDE-Library=krunner-lpass
+X-KDE-PluginInfo-Author=PoiScript
+X-KDE-PluginInfo-Email=poiscript@gmail.com
+X-KDE-PluginInfo-Name=LastPass
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-AdvertiseSingleRunnerQueryMode=true
