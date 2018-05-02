@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(RunnerLpass)
+project(KRunnerLastPass)
 
 # build library
 include(GNUInstallDirs)
@@ -57,18 +57,18 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 
 set(
-        krunner_lpass_srcs
+        krunner_lastpass_srcs
         main.cpp
 )
 
-add_library(krunner_lpass MODULE ${krunner_lpass_srcs})
+add_library(krunner_lastpass MODULE ${krunner_lastpass_srcs})
 
 target_link_libraries(
-        krunner_lpass
+        krunner_lastpass
         lastpass
         Qt5::Widgets
         KF5::Runner
 )
 
-install(TARGETS krunner_lpass DESTINATION ${PLUGIN_INSTALL_DIR})
-install(FILES plasma-lpass.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(TARGETS krunner_lastpass DESTINATION ${PLUGIN_INSTALL_DIR})
+install(FILES krunner-lastpass.desktop DESTINATION ${SERVICES_INSTALL_DIR})

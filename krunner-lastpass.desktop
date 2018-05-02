@@ -1,10 +1,10 @@
 [Desktop Entry]
 Name=LastPass
-Comment=Integrates KRunner with LastPass CLI.
+Comment=Integrates KRunner with LastPass.
 X-KDE-ServiceTypes=Plasma/Runner
 Type=Service
 Icon=lock
-X-KDE-Library=krunner-lpass
+X-KDE-Library=krunner-lastpass
 X-KDE-PluginInfo-Author=PoiScript
 X-KDE-PluginInfo-Email=poiscript@gmail.com
 X-KDE-PluginInfo-Name=LastPass
