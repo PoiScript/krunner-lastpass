@@ -66,7 +66,7 @@ file(GLOB PROJECT_SOURCES
         lastpass-cli/password.c
         )
 
-add_library(lastpass SHARED ${PROJECT_HEADERS} ${PROJECT_SOURCES})
+add_library(lastpass SHARED lastpass.c ${PROJECT_HEADERS} ${PROJECT_SOURCES})
 
 set(PROJECT_DEFINITIONS "_GNU_SOURCE")
 
