@@ -1,15 +1,10 @@
-#include "lastpass-cli/cmd.h"
-#include "lastpass-cli/cipher.h"
-#include "lastpass-cli/util.h"
-#include "lastpass-cli/config.h"
-#include "lastpass-cli/agent.h"
-#include "lastpass-cli/kdf.h"
-#include "lastpass-cli/endpoints.h"
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
 #include "lastpass.h"
+#include "lastpass-cli/cmd.h"
+#include "lastpass-cli/util.h"
+#include "lastpass-cli/agent.h"
+#include "lastpass-cli/endpoints.h"
+
+#include <string.h>
 
 int search(char *text) {
     unsigned char key[KDF_HASH_LEN];

@@ -16,54 +16,17 @@ find_package(CURL REQUIRED)
 include_directories(${CURL_INCLUDE_DIR})
 
 file(GLOB PROJECT_HEADERS
-        lastpass-cli/process.h
-        lastpass-cli/xml.h
-        lastpass-cli/endpoints-login.h
-        lastpass-cli/notes.h
-        lastpass-cli/config.h
-        lastpass-cli/blob.h
-        lastpass-cli/edit.h
-        lastpass-cli/log.h
-        lastpass-cli/format.h
-        lastpass-cli/pbkdf2.h
-        lastpass-cli/session.h
-        lastpass-cli/upload-queue.h
-        lastpass-cli/terminal.h
-        lastpass-cli/http.h
-        lastpass-cli/agent.h
-        lastpass-cli/util.h
         lastpass-cli/cmd.h
-        lastpass-cli/cipher.h
-        lastpass-cli/kdf.h
+        lastpass-cli/util.h
+        lastpass-cli/agent.h
         lastpass-cli/endpoints.h
-        lastpass-cli/endpoints-share.h
-        lastpass-cli/password.h
         )
+
 file(GLOB PROJECT_SOURCES
-        lastpass-cli/process.c
-        lastpass-cli/xml.c
-        lastpass-cli/endpoints-login.c
-        lastpass-cli/notes.c
-        lastpass-cli/config.c
-        lastpass-cli/blob.c
-        lastpass-cli/clipboard.c
-        lastpass-cli/edit.c
-        lastpass-cli/log.c
-        lastpass-cli/format.c
-        lastpass-cli/pbkdf2.c
-        lastpass-cli/session.c
-        lastpass-cli/upload-queue.c
-        lastpass-cli/terminal.c
-        lastpass-cli/http.c
-        lastpass-cli/agent.c
-        lastpass-cli/util.c
         lastpass-cli/cmd.c
-        lastpass-cli/cipher.c
-        lastpass-cli/kdf.c
+        lastpass-cli/util.c
+        lastpass-cli/agent.c
         lastpass-cli/endpoints.c
-        lastpass-cli/json-format.c
-        lastpass-cli/endpoints-share.c
-        lastpass-cli/password.c
         )
 
 add_library(lastpass SHARED lastpass.c ${PROJECT_HEADERS} ${PROJECT_SOURCES})
@@ -87,9 +50,8 @@ set(
         ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_MODULE_PATH}
 )
 
-
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Core Network Quick QuickWidgets)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Service Runner TextWidgets ConfigWidgets PlasmaQuick)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED CONFIG COMPONENTS Widgets Core)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Runner)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -105,12 +67,7 @@ target_link_libraries(
         krunner_lpass
         lastpass
         Qt5::Widgets
-        Qt5::Network
         KF5::Runner
-        KF5::I18n
-        KF5::Service
-        KF5::ConfigWidgets
-        KF5::Plasma
 )
 
 install(TARGETS krunner_lpass DESTINATION ${PLUGIN_INSTALL_DIR})
